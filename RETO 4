@@ -1,0 +1,36 @@
+#Varios museos prestan sus obras de arte para realizar una exposición en la ciudad de Chicago.
+#Cada museo tiene un registro de sus obras en un catálogo, mediante parejas <código:valor> en formato JSON.
+#Ocurre que durante el viaje se pierden algunas obras de arte. Los encargados de la exposición en Chicago logran hacer una lista de los códigos, 
+#de cada una de las obras de arte que fueron sustraídas, independientemente de cual museo es su dueño. 
+#El museo El Prado (uno de los museos prestamistas) requiere realizar un programa de computador 
+#para que cruzando la lista de códigos de las obras perdidas, contra el catálogo del propio museo El Prado, 
+#se imprima la lista de cuales fueron los códigos de sus obras perdidas y su valor total.
+
+#Entrada:
+
+#Línea1: parejas <código:valor> en formato JSON del catálogo del museo El Prado y
+
+#Linea2: relación de letras que identifican las obras de arte perdidas. En este caso las obras se identifican por letras del alfabeto, separadas por espacio
+
+#Salida:
+
+#Línea 1: valor total de las obras perdidas, representado por un número entero y
+
+#línea 2: relación de códigos de obras de su propiedad que fueron sustraídas, separadas por espacio
+
+#SOLUCIÓN
+
+import json 
+dicc= json.loads(input()) 
+lista= input()
+acum= int()
+elementos= str()
+for e in lista:
+ if e in dicc:
+   acum+= dicc[e]
+   elementos+= e+" "
+
+print (acum)
+print (elementos)
+#d={"e": 45, "i": 31, "p": 30, "d": 25, "k": 26, "w": 32, "g": 42, "t": 41}
+#lis= ["r, q, p, d, j, i, k, e, l"]
