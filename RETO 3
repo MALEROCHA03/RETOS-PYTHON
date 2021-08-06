@@ -1,0 +1,35 @@
+#Los dueños de un equipo de básquetbol anuncian que para el juego final del campeonato darán una bonificación 
+#al jugador que haga más cestas seguidas. Cada jugador está identificado por un número de un solo dígito y este número
+#se guarda en el sistema en el orden en que suceden las cestas del equipo, separadas por un espacio.
+
+#Su tarea es hacer el programa para el conteo de canastas, muestre en un renglón los datos de la entrada, separados por un espacio 
+#(cuando un jugador anota en forma seguida, se muestra el número del jugador una sola vez)
+#y en el segundo renglón muestre el número de veces seguidas que cada jugador hizo anotación.
+
+
+#SOLUCIÓN
+
+entrada = input().split(" ")
+letras = []
+numeros = []
+count = 1
+largo = len(entrada)
+i = 0
+
+##for i in range(0,largo):
+while(i<largo): 
+ if i+1< largo:
+    if entrada[i]==entrada[i+1]:
+      count+=1      
+    else:
+      letras.append(entrada[i])
+      numeros.append(str(count))
+      count=1
+ else:
+    letras.append(entrada[i])
+    numeros.append(str(count))
+
+ i+=1
+      
+print(' '.join(letras))
+print(' '.join(numeros))
