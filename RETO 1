@@ -1,0 +1,39 @@
+#Una pastelería produce tortas tipo uno, dos, tres y cuatro dependiendo de la cantidad de los ingredientes,
+#básicamente estos son tazas de azúcar, tazas de harina y cucharadas de mantequilla. Los ingredientes se mezclan en una proporción bien definida, así:
+
+#Si al número de tazas de harina le resto 4, esto me da el doble de las cucharadas de azúcar. 
+#Además, si sumo el numero de tazas de harina y el número de tazas de azúcar, esto me da 5 veces el número de cucharadas de mantequilla.
+
+#Las tortas se piden de acuerdo al número de tazas de azúcar y el programa debe calcular la cantidad de los restantes ingredientes, siguiendo la receta descrita.
+
+#Además, para efectos del empacado, las tortas se clasifican en categorías, según el numero de tazas de mantequilla, 
+#así: uno si la torta lleva hasta 20 cucharadas de mantequilla; dos, si la torta lleva entre 21 y 30 cucharadas de mantequilla;
+#tres, si la torta lleva entre 31 y 50 cucharadas; y cuatro, si lleva más de 50.
+
+#Entrada al programa: un número entero que determina el número de tazas de azúcar.
+
+#Salida: primera línea: 3 números enteros separados por un espacio, que indican el número de tazas de azúcar,
+el número de tazas de harina y el número de cucharadas de mantequilla. Segunda línea, el tipo de torta, corresponde a una de las palabras uno, dos, tres o cuatro.
+
+#SOLUCIÓN
+
+azucar = int(input(" Ingresa Numero: " ))
+
+
+harina = 2 * azucar + 4
+mantequilla = (harina + azucar )//5
+
+print(azucar , harina , mantequilla)
+
+if mantequilla >= 1 and mantequilla <=20:
+    print ("uno")
+
+elif mantequilla >= 21 and mantequilla <=30:
+    print ("dos")
+
+elif mantequilla >= 31 and mantequilla <=50:
+    print ("tres")
+
+elif mantequilla >50:
+    print ("cuatro")
+    
