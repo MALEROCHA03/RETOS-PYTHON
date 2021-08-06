@@ -1,0 +1,47 @@
+#Un supermercado va a decidir si va a representar a la compañía ABC o a la compañía XYZ, quienes fabrican quesos que son competencia,
+#y el criterio de selección es aquella que venda mas cantidad. Los productos de la compañía ABC, son de precio popular pero de calidad corriente
+#y sus ventas se van a comparar con igual numero de productos producidos por la empresa XYZ, que fabrica productos de calidad
+#y bien costosos. Cada tipo de producto esta etiquetado con su código de barras, que incluye una letra que identifica el tipo de producto y 
+#esa letra queda registrada cada que se hace una venta. Al final de la semana y en presencia de los gerentes de las compañía fabricantes
+#se va a correr un programa que Ud va a desarrollar.
+
+#ENTRADA:
+
+#primera línea: las letras que abreviadamente identifican los n productos de la compañía ABC;
+
+#segunda línea, las letras que identifican los n productos de la compañía XYZ; 
+
+#tercera línea, las letras de todos los tipos de productos vendidos en la semana, tanto de los productos en estudio como muchos otros mas.
+#Su programa va a leer las letras que identifican los productos vendidos en la semana. Si la letra corresponde a un producto de la compañía ABC, va a incrementar su contador de productos vendidos, si la letra corresponde a un producto de la compañía XYZ, incrementará su propio contador.
+
+#Las letras se ingresan juntas, es decir sin espacios entre ellas.
+
+#Salida:
+
+#Una línea con las letras P, N, I, (se imprime cada vez que se procesa un producto vendido), su programa  escoge las letras de la siguiente manera: la letra P,
+#si en ese momento la compañía ABC ha vendido mas cantidad que la compañía XYZ, la letra N si en ese momento la compañía XYZ
+#ha vendido mas cantidad que la ABC y la letra I,si van empatadas.
+
+
+
+#SOLUCIÓN 
+
+
+contABC=0
+contaXYZ=0
+ABC=str(input("ingrese compañía ABC:"))
+XYZ=str(input("ingrese compañía XYZ:"))
+letra=str(input("ingrese letras: "))
+
+
+for i in letra:
+    if i in ABC:
+            contABC+=1
+    if i in XYZ:
+            contaXYZ+=1
+    if contABC>contaXYZ:
+        print("P", end = '')
+    elif contABC<contaXYZ:
+        print("N", end = '')
+    else:
+        print("I", end = '')
